@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+
+    <div class="articleWrap">
+    </div>
+    
+  </body>
+  <script>
+    $.ajax({
+        type: 'get',
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        dataType: 'json',
+        success: (data)=>{
+          var str = '';
+          $(data).each(function(){
+              var id = this.id;
+              var title = this.title;
+              var body = this.body;
+
+              str += `<h2>${id}: ${title}</h2>
+                      <p>${body}</p><br>`;
+              
+              
+          })
+                
+          $(".articleWrap").html(str);
+
+        }
+
+    });
+
+  </script>
+</html>

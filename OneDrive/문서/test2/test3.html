@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mediaH2{color: #000;cursor: pointer;}
+    .color{color: #fc0;}
+</style>
+<body>
+    <div class="wrap">
+        <h2 class="mediaH2">hello</h2>
+    </div>
+    <script>
+        const here = document.querySelector(".mediaH2")
+        here.addEventListener("click",changeColor);
+        function changeColor(){
+            if(here.classList.contains("color"))
+            {
+                here.classList.remove("color")
+            }else{
+                here.classList.add("color")
+            }
+        }
+        
+    </script>
+</body>
+</html>

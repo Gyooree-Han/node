@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kt server test</title>
+    <style>
+        .wrap{}
+        .wrap .articleWrap{
+            max-width: 1200px;
+            width: 100%;
+            margin:0 auto;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .wrap .articleWrap article{
+            width: calc(33.33% - 20px);
+        }
+        .wrap .articleWrap article .image{
+            
+        }
+        .wrap .articleWrap article .text{}
+        .wrap .articleWrap article .text h2{
+            font-size: 15px;
+            line-height: 1;
+            margin:0;
+            margin-top: 10px;
+        }
+        .wrap .articleWrap article .text .custom{}
+        .wrap .articleWrap article .text .price{
+            font-size: 12px;
+            line-height: 1;
+            /* margin-top: 10px; */
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .headerWrap{background-color: rgb(208, 186, 120);}
+        .headerWrap h1{color: #fff;font-size: 24px;text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="headerWrap">
+            <header>
+                <h1>SIGN UP NOW GET 2,000 OFF COUPON, JOIN US!</h1>
+            </header>
+        </div>
+        <div class="articleWrap">
+            <%
+                var shoppingList =  
+                [
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/1/",
+                        "image" : "/views/img/b8ecf33704905abfed74ed5e66176cfd.jpg",
+                        "name" : "WEAVE KNIT1",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/2/",
+                        "image" : "/views/img/852f5d05aa43e040568382ce7b7a6ce9.jpg",
+                        "name" : "WEAVE KNIT2",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/3/",
+                        "image" : "/views/img/2a5fd8a8431dc5e2ece398bd4d6f33ff.jpg",
+                        "name" : "WEAVE KNIT3",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/4/",
+                        "image" : "/views/img/516f14587dd6d001337dc01f4b4e4d8d.jpg",
+                        "name" : "WEAVE KNIT4",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/5/",
+                        "image" : "/views/img/748e7d371703a60c706fbe78fdc4ab9e.jpg",
+                        "name" : "WEAVE KNIT5",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/6/",
+                        "image" : "/views/img/fa1cda6253306fcffd546cfe91800027.jpg",
+                        "name" : "WEAVE KNIT6",
+                        "price" : "38,000"   
+                    }
+                    ,
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/4/",
+                        "image" : "/views/img/516f14587dd6d001337dc01f4b4e4d8d.jpg",
+                        "name" : "WEAVE KNIT4",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/5/",
+                        "image" : "/views/img/748e7d371703a60c706fbe78fdc4ab9e.jpg",
+                        "name" : "WEAVE KNIT5",
+                        "price" : "38,000"   
+                    },
+                    {
+                        "location" : "http://reetkeem.com/product/weave-knit/2261/category/65/display/6/",
+                        "image" : "/views/img/fa1cda6253306fcffd546cfe91800027.jpg",
+                        "name" : "WEAVE KNIT6",
+                        "price" : "38,000"   
+                    }
+                ]
+             for(var j = 0; j< shoppingList.length; j++){%> 
+                <article>
+                    <a href="<%= shoppingList[j].location %>">
+                        <div class="image">
+                            <img src="<%= shoppingList[j].image %>" alt="" width="100%">
+                        </div>
+                        <div class="text">
+                            <h2><%= shoppingList[j].name %></h2>
+                            <div class="custom">
+                                <img src="/views/img/custom_416188022781131.gif" alt="">
+                            </div>
+                            <div class="price">KRW <span><%= shoppingList[j].price %></span></div>
+                        </div>
+                    </a>
+                </article>
+            <%}%>
+        </div>
+    </div>
+    <script>
+           $.ajax({
+                type: 'get',
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                dataType: 'json',
+                success: (data)=>{
+                    alert(data.length);
+                }
+            });
+    </script>
+</body>
+</html>
