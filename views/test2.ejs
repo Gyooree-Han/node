@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+
+    <div class="articleWrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>CONTENT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%
+                  for(var j = 0; j< testData.length; j++)
+                  {
+                  %> 
+                  <tr>
+                    <td><%= testData[j].boardId %></td>
+                    <td><%= testData[j].title %></td>
+                    <td><%= testData[j].content %></td>
+                  </tr>
+                  <%
+                  }
+                  %>
+                </tbody>
+              </table>
+            
+    </div>
+    
+  </body>
+  <script>
+    
+
+  </script>
+</html>
